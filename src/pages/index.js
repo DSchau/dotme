@@ -1,7 +1,9 @@
 import React from "react";
+import { graphql } from "gatsby";
 import styled from "@emotion/styled";
 import { keyframes } from "@emotion/core";
 import { Layout, Outlink, SEO } from "../components/";
+import Img from "gatsby-image";
 
 import portraitSrc from "../images/portrait.png";
 
@@ -65,7 +67,7 @@ const Header = styled(`h1`)`
   animation-delay: 500ms;
 `;
 
-const Portrait = styled(`img`)`
+const Portrait = styled(Img)`
   display: block;
   margin: 0 auto;
   width: 100%;
@@ -75,7 +77,7 @@ const Portrait = styled(`img`)`
   }
 `;
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Amberley" keywords={[`gatsby`, `react`, `accessibility`]} />
     <Wrapper>
@@ -83,6 +85,7 @@ const IndexPage = () => (
         <Portrait
           alt="Me (Amberley) smiling, wearing sunglasses"
           src={portraitSrc}
+          fluid={data.portrait.childImageSharp.fluid}
         />
       </ImageSection>
       <InfoSection>
@@ -108,3 +111,15 @@ const IndexPage = () => (
 );
 
 export default IndexPage;
+
+export const query = graphql`
+  query {
+    portrait: file(relativePath: { eq: "portrait.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`;
