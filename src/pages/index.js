@@ -94,7 +94,7 @@ const IndexPage = ({ data }) => (
           <Outlink href="https://twitter.com/amber1ey">I'm Amberley.</Outlink>
         </Header>
         <p>
-          Front-end engineer, accessibility advocate, and unrepentent
+          Front-end engineer, accessibility advocate, and unrepentant
           generalist. Currently @{" "}
           <Outlink href="https://www.gatsbyjs.org/">Gatsby</Outlink>.
         </p>
