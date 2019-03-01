@@ -65,6 +65,10 @@ const InfoSection = styled(`section`)`
 const Header = styled(`h1`)`
   animation: ${bounce} 1s ease;
   animation-delay: 500ms;
+
+  @media (max-width: 400px) {
+    font-size: 2.8rem;
+  }
 `;
 
 const Portrait = styled(Img)`
