@@ -46,6 +46,7 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "devDependencies": {
+    "lighthousebot": "https://github.com/GoogleChromeLabs/lighthousebot",
     "wait-for-netlify-preview": "^1.2.0"
   }
 }
